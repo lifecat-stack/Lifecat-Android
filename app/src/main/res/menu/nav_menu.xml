@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--导航栏menu:profile web photo upload settings-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--单选框-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile"
+            android:title="profile"
+            android:color="@color/black"/>
+        <item
+            android:id="@+id/nav_web"
+            android:icon="@drawable/web"
+            android:title="web"
+            android:color="@color/black"/>
+        <item
+            android:id="@+id/nav_photo"
+            android:icon="@drawable/photo"
+            android:title="photo"
+            android:color="@color/black"/>
+        <item
+            android:id="@+id/nav_upload"
+            android:icon="@drawable/upload"
+            android:title="upload"
+            android:color="@color/black"/>
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/settings"
+            android:title="settings"
+            android:color="@color/black"/>
+    </group>
+</menu>
