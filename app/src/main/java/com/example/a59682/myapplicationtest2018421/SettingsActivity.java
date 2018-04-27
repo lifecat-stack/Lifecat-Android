@@ -21,7 +21,7 @@ public class SettingsActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             //设置导航按钮
-            //actionBar.setHomeAsUpIndicator(R.mipmap.navigation);
+//            actionBar.setHomeAsUpIndicator(R.mipmap.navigation);
         }
     }
 }

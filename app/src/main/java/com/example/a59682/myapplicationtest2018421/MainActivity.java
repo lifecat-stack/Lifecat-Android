@@ -22,13 +22,11 @@ public class MainActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             //设置导航按钮
-            //actionBar.setHomeAsUpIndicator(R.mipmap.navigation);
+//            actionBar.setHomeAsUpIndicator(R.mipmap.navigation);
         }
 
         /* 设置toolbar */
         Toolbar toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
     }
-
-
 }

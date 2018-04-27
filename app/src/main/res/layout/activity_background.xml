@@ -128,7 +128,7 @@
                     android:paddingLeft="25dp"
                     android:paddingRight="25dp"
                     android:paddingTop="4dp"
-                    android:text="访问服务"
+                    android:text="服务"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>

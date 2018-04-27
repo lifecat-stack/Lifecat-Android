@@ -40,7 +40,7 @@ public class UploadActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             //设置导航按钮
-            //actionBar.setHomeAsUpIndicator(R.mipmap.navigation);
+//            actionBar.setHomeAsUpIndicator(R.mipmap.navigation);
         }
 
         init();
@@ -86,16 +86,19 @@ public class UploadActivity extends AppCompatActivity {
                 Intent intent_backup = new Intent();
                 intent_backup.setClass(UploadActivity.this, LoginActivity.class);
                 startActivity(intent_backup);
-                /* web键 */
+                break;
+            /* web键 */
             case R.id.web:
                 Intent intent_web = new Intent();
                 intent_web.setClass(UploadActivity.this, WebActivity.class);
                 startActivity(intent_web);
-                /* home键 */
+                break;
+            /* home键 */
             case R.id.home:
                 Intent intent_home = new Intent();
                 intent_home.setClass(UploadActivity.this, BackgroundActivity.class);
                 startActivity(intent_home);
+                break;
         }
         return true;
     }

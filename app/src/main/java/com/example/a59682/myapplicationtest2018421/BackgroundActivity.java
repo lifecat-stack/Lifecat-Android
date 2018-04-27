@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -59,7 +60,7 @@ public class BackgroundActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             //设置导航按钮
-            //actionBar.setHomeAsUpIndicator(R.mipmap.navigation);
+            actionBar.setHomeAsUpIndicator(R.mipmap.navigation);
         }
 
         /* 设置默认激活按钮 */
@@ -95,7 +96,7 @@ public class BackgroundActivity extends AppCompatActivity {
     }
 
     /**
-     * @description: 获取组件
+     * @description 获取组件
      */
     private void assignViews() {
         button_upload = findViewById(R.id.background_button_upload);
@@ -104,7 +105,7 @@ public class BackgroundActivity extends AppCompatActivity {
     }
 
     /**
-     * @description: 设置点击事件-->对应不同的activity
+     * @description 设置点击事件-->对应不同的activity
      */
     private void initListener() {
         button_upload.setOnClickListener(new View.OnClickListener() {
