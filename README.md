@@ -7,15 +7,15 @@ APP基于Android平台，使用AndroidStudio开发，UI遵循MaterialDesign设�
 
 ### 主要界面：
 
-  欢迎界面：播放欢迎视频。
+    欢迎界面：播放欢迎视频。
 
-  登录/注册：用户登录/注册的操作均会连接到数据库，进行同数据库的操作
+    登录/注册：用户登录/注册的操作均会连接到数据库，进行同数据库的操作
 
-  主页面：跳转到其他页面，以及侧边栏显示用户信息
+    主页面：跳转到其他页面，以及侧边栏显示用户信息
 
-  上传图片：取得用户权限后，可以读取本机内的图片库或使用摄像头进行拍照，最多选中9张照片进行上传。
+    上传图片：取得用户权限后，可以读取本机内的图片库或使用摄像头进行拍照，最多选中9张照片进行上传。
 
-  相册：展示用户的图片库，基于卡片式布局，有效的进行界面的美观和管理
+    相册：展示用户的图片库，基于卡片式布局，有效的进行界面的美观和管理
 
 ### 主要功能：
 
@@ -32,28 +32,28 @@ APP基于Android平台，使用AndroidStudio开发，UI遵循MaterialDesign设�
     电子宠物互动功能：语料库关键词匹配
   
 ### gradle依赖
-dependencies {  
-        implementation fileTree(include: ['*.jar'], dir: 'libs')  
-        implementation 'com.android.support:appcompat-v7:27.1.1'  
-        implementation 'com.android.support.constraint:constraint-layout:1.1.0'  
-        implementation 'com.jakewharton:butterknife:8.5.1'  
-        implementation 'com.android.support:design:27.1.1'  
-        //开源album:选取照片  
-        implementation 'com.yanzhenjie:album:1.0.0'  
-        //侧滑栏  
-        implementation 'com.android.support:design:27.1.1'  
-        implementation 'de.hdodenhof:circleimageview:2.1.0'  
-        //卡片式布局  
-        implementation 'com.android.support:recyclerview-v7:27.1.1'  
-        implementation 'com.android.support:cardview-v7:27.1.1'   
-        implementation 'com.github.bumptech.glide:glide:3.7.0'  
-        //OkHttp  
-        implementation 'com.squareup.okhttp3:okhttp:3.7.0'  
-        testImplementation 'junit:junit:4.12'  
-        androidTestImplementation 'com.android.support.test:runner:1.0.2'  
-        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'  
-  }  
-  
+    dependencies {  
+            implementation fileTree(include: ['*.jar'], dir: 'libs')  
+            implementation 'com.android.support:appcompat-v7:27.1.1'  
+            implementation 'com.android.support.constraint:constraint-layout:1.1.0'  
+            implementation 'com.jakewharton:butterknife:8.5.1'  
+            implementation 'com.android.support:design:27.1.1'  
+            //开源album:选取照片  
+            implementation 'com.yanzhenjie:album:1.0.0'  
+            //侧滑栏  
+            implementation 'com.android.support:design:27.1.1'  
+            implementation 'de.hdodenhof:circleimageview:2.1.0'  
+            //卡片式布局  
+            implementation 'com.android.support:recyclerview-v7:27.1.1'  
+            implementation 'com.android.support:cardview-v7:27.1.1'   
+            implementation 'com.github.bumptech.glide:glide:3.7.0'  
+            //OkHttp  
+            implementation 'com.squareup.okhttp3:okhttp:3.7.0'  
+            testImplementation 'junit:junit:4.12'  
+            androidTestImplementation 'com.android.support.test:runner:1.0.2'  
+            androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'  
+      }  
+
 ## SHOW
  ![image](https://img-blog.csdn.net/20180510170053798?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dzaDU5NjgyMzkxOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
  
