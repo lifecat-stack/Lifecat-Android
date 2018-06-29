@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 /**
  * @author 59682
@@ -23,6 +24,7 @@ public class BackgroundActivity extends AppCompatActivity {
     private Button button_upload;
     private Button button_web;
     private Button button_photo;
+    private ImageButton background_button;
 
     /* 导航按钮 */
     private DrawerLayout mDrawerLayout;
@@ -102,6 +104,7 @@ public class BackgroundActivity extends AppCompatActivity {
         button_upload = findViewById(R.id.background_button_upload);
         button_web = findViewById(R.id.background_button_web);
         button_photo = findViewById(R.id.background_button_photo);
+        background_button=findViewById(R.id.background_button);
     }
 
     /**
@@ -137,6 +140,17 @@ public class BackgroundActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 // 设置要跳转的页面
                 intent.setClass(BackgroundActivity.this, PhotoActivity.class);
+                // 开始Activity
+                startActivity(intent);
+            }
+        });
+        background_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 创建Intent对象
+                Intent intent = new Intent();
+                // 设置要跳转的页面
+                intent.setClass(BackgroundActivity.this, MainActivity.class);
                 // 开始Activity
                 startActivity(intent);
             }

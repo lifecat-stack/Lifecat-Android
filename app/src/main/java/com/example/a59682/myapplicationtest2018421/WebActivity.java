@@ -21,6 +21,6 @@ public class WebActivity extends AppCompatActivity {
         WebView webView=findViewById(R.id.web_view);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://111.230.244.153:8080/lifecatweb");
+        webView.loadUrl("http://111.230.244.153:8080/lifecatweb/imageshow.jsp");
     }
 }
