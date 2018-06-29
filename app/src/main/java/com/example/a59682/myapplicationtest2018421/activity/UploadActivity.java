@@ -1,4 +1,4 @@
-package com.example.a59682.myapplicationtest2018421;
+package com.example.a59682.myapplicationtest2018421.activity;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.a59682.myapplicationtest2018421.R;
 
 import java.io.FileNotFoundException;
 

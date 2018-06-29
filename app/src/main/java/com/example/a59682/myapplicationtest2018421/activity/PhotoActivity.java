@@ -1,4 +1,4 @@
-package com.example.a59682.myapplicationtest2018421;
+package com.example.a59682.myapplicationtest2018421.activity;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -9,6 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.a59682.myapplicationtest2018421.bean.Photo;
+import com.example.a59682.myapplicationtest2018421.adapter.PhotoAdapter;
+import com.example.a59682.myapplicationtest2018421.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.a59682.myapplicationtest2018421;
+package com.example.a59682.myapplicationtest2018421.view;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.a59682.myapplicationtest2018421.R;
+import com.example.a59682.myapplicationtest2018421.view.CustomVideoView;
 
 /**
  * @author 59682

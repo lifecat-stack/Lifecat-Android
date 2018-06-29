@@ -1,8 +1,10 @@
-package com.example.a59682.myapplicationtest2018421;
+package com.example.a59682.myapplicationtest2018421.activity;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.a59682.myapplicationtest2018421.R;
 
 /**
  * @author 59682

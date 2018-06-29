@@ -1,9 +1,11 @@
-package com.example.a59682.myapplicationtest2018421;
+package com.example.a59682.myapplicationtest2018421.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.example.a59682.myapplicationtest2018421.R;
 
 /**
  * @name WebActivity

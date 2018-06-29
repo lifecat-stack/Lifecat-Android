@@ -1,4 +1,4 @@
-package com.example.a59682.myapplicationtest2018421;
+package com.example.a59682.myapplicationtest2018421.activity;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
@@ -12,6 +12,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.a59682.myapplicationtest2018421.view.GuildFragment;
+import com.example.a59682.myapplicationtest2018421.R;
 
 import java.util.ArrayList;
 import java.util.List;

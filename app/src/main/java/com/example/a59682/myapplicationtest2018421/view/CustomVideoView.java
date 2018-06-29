@@ -1,4 +1,4 @@
-package com.example.a59682.myapplicationtest2018421;
+package com.example.a59682.myapplicationtest2018421.view;
 
 import android.content.Context;
 import android.media.MediaPlayer;

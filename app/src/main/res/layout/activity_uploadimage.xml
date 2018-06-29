@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.a59682.myapplicationtest2018421.UploadImage">
+    tools:context="com.example.a59682.myapplicationtest2018421.activity.UploadImage">
 
 
 </android.support.constraint.ConstraintLayout>
