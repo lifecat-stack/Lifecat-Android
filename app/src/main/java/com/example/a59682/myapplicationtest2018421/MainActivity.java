@@ -11,6 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.a59682.myapplicationtest2018421.activity.PhotoActivity;
+import com.example.a59682.myapplicationtest2018421.activity.UploadActivity;
+import com.example.a59682.myapplicationtest2018421.activity.WebActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
