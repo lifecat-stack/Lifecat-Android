@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#000"
     android:orientation="vertical"
-    tools:context="com.example.a59682.myapplicationtest2018421.MainActivity">
+    tools:context="com.ten.lifecat.phone.MainActivity">
 
     <!--ToolBar-->
     <android.support.v7.widget.Toolbar

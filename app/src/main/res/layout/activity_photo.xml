@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.a59682.myapplicationtest2018421.activity.PhotoActivity">
+    tools:context="com.ten.lifecat.phone.activity.PhotoActivity">
 
     <!--ToolBar-->
     <android.support.v7.widget.Toolbar

@@ -1,4 +1,4 @@
-package com.example.a59682.myapplicationtest2018421;
+package com.ten.lifecat.phone;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.a59682.myapplicationtest2018421", appContext.getPackageName());
+        assertEquals("com.ten.lifecat.myapplicationtest2018421", appContext.getPackageName());
     }
 }

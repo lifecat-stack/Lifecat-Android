@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.a59682.myapplicationtest2018421">
+    package="com.ten.lifecat.phone">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/lifecat_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.WelcomeActivity">
+        <activity android:name="com.ten.lifecat.phone.activity.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,27 +22,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.ten.lifecat.phone.activity.MainActivity"
             android:label="LifeCat" />
         <activity
-            android:name=".activity.WebActivity"
+            android:name="com.ten.lifecat.phone.activity.WebActivity"
             android:label="访问服务" />
         <activity
-            android:name=".activity.SettingsActivity"
+            android:name="com.ten.lifecat.phone.activity.SettingsActivity"
             android:label="设置" />
         <activity
-            android:name=".activity.UploadImage"
+            android:name="com.ten.lifecat.phone.activity.UploadImage"
             android:label="选择图片" />
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.SignupActivity" />
+        <activity android:name="com.ten.lifecat.phone.activity.LoginActivity" />
+        <activity android:name="com.ten.lifecat.phone.activity.SignupActivity" />
         <activity
-            android:name=".activity.BackgroundActivity"
+            android:name="com.ten.lifecat.phone.activity.BackgroundActivity"
             android:label="lifecat" />
         <activity
-            android:name=".activity.UploadActivity"
+            android:name="com.ten.lifecat.phone.activity.UploadActivity"
             android:label="上传图片" />
         <activity
-            android:name=".activity.PhotoActivity"
+            android:name="com.ten.lifecat.phone.activity.PhotoActivity"
             android:label="相册Album" />
         <activity
             android:name="com.yanzhenjie.album.AlbumActivity"

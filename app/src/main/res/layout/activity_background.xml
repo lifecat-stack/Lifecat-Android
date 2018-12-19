@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.a59682.myapplicationtest2018421.activity.BackgroundActivity">
+    tools:context="com.ten.lifecat.phone.activity.BackgroundActivity">
 
     <!--第一个子控件：主页面-->
     <LinearLayout
