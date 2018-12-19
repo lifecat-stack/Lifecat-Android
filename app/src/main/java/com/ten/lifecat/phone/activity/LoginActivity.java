@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,24 +15,35 @@ import com.ten.lifecat.phone.R;
 import com.ten.lifecat.phone.bean.User;
 
 /**
- * @author 59682
- * @name LoginActivity
- * @description 登录界面
+ * 用户登录注册界面
  */
 public class LoginActivity extends AppCompatActivity {
+
     /* 广播信息 */
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
-    /* 组件ID */
-    private EditText _emailText;
-    private EditText _passwordText;
-    private Button _loginButton;
-    private TextView _signupLink;
+
+    /**
+     * 登录邮箱
+     */
+    private EditText emailText;
+    /**
+     * 登录密码
+     */
+    private EditText passwordText;
+    /**
+     * 登录按钮
+     */
+    private Button loginButton;
+
+    /**
+     * 跳转到注册界面
+     */
+    private TextView signupLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /* 隐藏标题栏 */
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
 
@@ -45,10 +55,10 @@ public class LoginActivity extends AppCompatActivity {
      * @description 获取组件
      */
     private void assignViews() {
-        _emailText = findViewById(R.id.input_email);
-        _passwordText = findViewById(R.id.input_password);
-        _loginButton = findViewById(R.id.btn_login);
-        _signupLink = findViewById(R.id.link_signup);
+        emailText = findViewById(R.id.input_email);
+        passwordText = findViewById(R.id.input_password);
+        loginButton = findViewById(R.id.btn_login);
+        signupLink = findViewById(R.id.link_signup);
     }
 
     /**
@@ -56,21 +66,13 @@ public class LoginActivity extends AppCompatActivity {
      */
     private void initListener() {
         /* 登录button */
-        _loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                login();
-            }
-        });
+        loginButton.setOnClickListener(v -> login());
         /* 注册button */
-        _signupLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Start the Signup activity
-                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
-                startActivityForResult(intent, REQUEST_SIGNUP);
-                finish();
-            }
+        signupLink.setOnClickListener(v -> {
+            // Start the Signup activity
+            Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+            startActivityForResult(intent, REQUEST_SIGNUP);
+            finish();
         });
     }
 
@@ -87,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         /* 锁定登录按钮直至验证完成 */
-        _loginButton.setEnabled(false);
+        loginButton.setEnabled(false);
 
         /* 验证时:弹出框 */
         final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this,
@@ -97,8 +99,8 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.show();
 
         /* 获取用户登录信息 */
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        String email = emailText.getText().toString();
+        String password = passwordText.getText().toString();
 
         // TODO: Implement your own authentication logic here.
         /*------ 验证逻辑 ------*/
@@ -107,24 +109,20 @@ public class LoginActivity extends AppCompatActivity {
         if (User.validateUser(email, password)) {
             /* 启动成功线程-->延时三秒动画 */
             new android.os.Handler().postDelayed(
-                    new Runnable() {
-                        public void run() {
-                            // On complete call either onLoginSuccess or onLoginFailed
-                            onLoginSuccess();
-                            progressDialog.dismiss();
-                        }
+                    () -> {
+                        // On complete call either onLoginSuccess or onLoginFailed
+                        onLoginSuccess();
+                        progressDialog.dismiss();
                     }, 1000);
         }
         /* 认证失败 */
         else {
             /* 启动失败线程-->延时三秒动画 */
             new android.os.Handler().postDelayed(
-                    new Runnable() {
-                        public void run() {
-                            // On complete call either onLoginSuccess or onLoginFailed
-                            onLoginFailed();
-                            progressDialog.dismiss();
-                        }
+                    () -> {
+                        // On complete call either onLoginSuccess or onLoginFailed
+                        onLoginFailed();
+                        progressDialog.dismiss();
                     }, 1000);
         }
     }
@@ -164,7 +162,7 @@ public class LoginActivity extends AppCompatActivity {
      * @description 登录成功-->跳转 + finish Activity
      */
     public void onLoginSuccess() {
-        _loginButton.setEnabled(true);
+        loginButton.setEnabled(true);
 
         /* 跳转到MainActivity */
         Intent intent = new Intent();
@@ -180,7 +178,7 @@ public class LoginActivity extends AppCompatActivity {
      */
     public void onLoginFailed() {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
-        _loginButton.setEnabled(true);
+        loginButton.setEnabled(true);
     }
 
     /**
@@ -190,21 +188,21 @@ public class LoginActivity extends AppCompatActivity {
     public boolean validate() {
         boolean valid = true;
 
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        String email = emailText.getText().toString();
+        String password = passwordText.getText().toString();
         /* email=null 或 email不符合格式 */
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _emailText.setError("enter a valid email address");
+            emailText.setError("enter a valid email address");
             valid = false;
         } else {
-            _emailText.setError(null);
+            emailText.setError(null);
         }
         /* password==null 或 password小于4字符 或 password大于10字符 */
         if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("between 4 and 10 alphanumeric characters");
+            passwordText.setError("between 4 and 10 alphanumeric characters");
             valid = false;
         } else {
-            _passwordText.setError(null);
+            passwordText.setError(null);
         }
 
         return valid;
