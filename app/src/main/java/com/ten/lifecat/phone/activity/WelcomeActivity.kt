@@ -17,11 +17,11 @@ import com.ten.lifecat.phone.view.GuildFragment
 import com.ten.lifecat.phone.R
 
 /**
- * Start up application : 欢迎界面
+ * Start up application : APP欢迎界面
  */
 class WelcomeActivity : AppCompatActivity() {
 
-    /** ViewPager 容器 */
+    /** ViewPager 翻页视图 */
     private var vp: ViewPager? = null
     /** 欢迎动画 第一屏 */
     private var iv1: ImageView? = null
@@ -37,11 +37,28 @@ class WelcomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // 隐藏标题栏
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        // 隐藏状态栏
-        this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        setContentView(R.layout.activity_welcome)
+
+        // 判断是否已经登录过
+        val pref = getSharedPreferences("data", MODE_PRIVATE)!!
+        val hasLogin = pref.getBoolean("hasLogin", false)
+
+        // 第一次登录 -> 继续 WelcomeActivity
+        if (!hasLogin) {
+            // 隐藏标题栏
+            requestWindowFeature(Window.FEATURE_NO_TITLE)
+            // 隐藏状态栏
+            window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
+            setContentView(R.layout.activity_welcome)
+
+
+        }
+        // 已登录 -> 跳转到 BackgroundActivity
+        else {
+
+        }
+
+
         // 注册组件
         regisViews()
         // 注册按钮监听器
@@ -51,6 +68,7 @@ class WelcomeActivity : AppCompatActivity() {
         // 动画滑动效果
         slideAnimation()
     }
+
 
     /**
      * Register component

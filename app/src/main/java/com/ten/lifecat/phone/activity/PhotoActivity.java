@@ -18,9 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author 59682
- * @name PhotoActivity
- * @description 图片展示界面
+ * 图片展示界面
  */
 public class PhotoActivity extends AppCompatActivity {
     /* 适配器数据集 */
@@ -110,11 +108,11 @@ public class PhotoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
 
-        /* 设置toolbar */
+        // toolbar
         Toolbar toolbar = findViewById(R.id.photo_toolbar);
         setSupportActionBar(toolbar);
 
-        /* 设置bar左侧按钮 */
+        // bar左侧按钮
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -138,7 +136,7 @@ public class PhotoActivity extends AppCompatActivity {
     }
 
     /**
-     * @description 获取数据集
+     * 获取数据集
      */
     private void initPhotos() {
 //        String path = "D:\\Android\\AndroidProjects\\LifeCat\\app\\src\\main\\res\\images\\";
@@ -151,16 +149,18 @@ public class PhotoActivity extends AppCompatActivity {
     }
 
     /**
-     * @description 设置菜单menu
+     * 设置菜单menu
      */
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar, menu);
         return true;
     }
 
     /**
-     * @description 设置menu点击事件
+     * 设置menu点击事件
      */
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             /* 返回键 */

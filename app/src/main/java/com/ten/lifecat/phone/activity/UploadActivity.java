@@ -19,9 +19,7 @@ import com.ten.lifecat.phone.R;
 import java.io.FileNotFoundException;
 
 /**
- * @author 59682
- * @name UploadActivity
- * @description 图片上传
+ * 图片上传界面
  */
 public class UploadActivity extends AppCompatActivity {
 
@@ -48,19 +46,16 @@ public class UploadActivity extends AppCompatActivity {
         init();
 
         /* 点击打开UpLoadImage，使用Album进行上传 */
-        Browse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(UploadActivity.this, UploadImage.class);
-                startActivity(intent);
-            }
+        Browse.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(UploadActivity.this, UploadImage.class);
+            startActivity(intent);
         });
     }
 
     /* 初始化 */
     private void init() {
-        Browse = (Button) findViewById(R.id.browse);
+        Browse = findViewById(R.id.browse);
         Images = (ImageView) findViewById(R.id.camera_image);
     }
 
@@ -79,15 +74,18 @@ public class UploadActivity extends AppCompatActivity {
     }
 
     /**
-     * @description 设置menu点击事件
+     * 设置menu点击事件
      */
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         switch (item.getItemId()) {
+
             /* 返回键 */
             case R.id.backup:
-                Intent intent_backup = new Intent();
-                intent_backup.setClass(UploadActivity.this, LoginActivity.class);
-                startActivity(intent_backup);
+                Intent intentBackup = new Intent();
+                intentBackup.setClass(UploadActivity.this, LoginActivity.class);
+                startActivity(intentBackup);
                 break;
             /* web键 */
             case R.id.web:
@@ -100,6 +98,8 @@ public class UploadActivity extends AppCompatActivity {
                 Intent intent_home = new Intent();
                 intent_home.setClass(UploadActivity.this, BackgroundActivity.class);
                 startActivity(intent_home);
+                break;
+            default:
                 break;
         }
         return true;

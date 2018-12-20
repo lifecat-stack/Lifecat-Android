@@ -9,6 +9,7 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/lifecat_icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/lifecat_icon"
@@ -22,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.ten.lifecat.phone.activity.MainActivity"
+            android:name="com.ten.lifecat.phone.activity.UserProfileActivity"
             android:label="LifeCat" />
         <activity
             android:name="com.ten.lifecat.phone.activity.WebActivity"
@@ -50,7 +51,6 @@
             android:label="图库"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden|stateHidden" />
-        <!--<activity android:name=".HttpActivity"></activity>-->
     </application>
 
 </manifest>

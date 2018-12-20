@@ -7,9 +7,7 @@ import android.os.Bundle;
 import com.ten.lifecat.phone.R;
 
 /**
- * @author 59682
- * @name SettingsActivity
- * @description 用户设置界面
+ * TODO 用户设置界面
  */
 public class SettingsActivity extends AppCompatActivity {
 
@@ -18,12 +16,13 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        /* 设置bar左侧按钮 */
+        // 导航按钮
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-            //设置导航按钮
-//            actionBar.setHomeAsUpIndicator(R.mipmap.navigation);
+            actionBar.setHomeAsUpIndicator(R.mipmap.navigation);
         }
+
+        // TODO 用户信息展示与修改
     }
 }

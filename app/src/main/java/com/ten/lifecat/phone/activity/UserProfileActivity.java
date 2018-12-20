@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone;
+package com.ten.lifecat.phone.activity;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -11,19 +11,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.ten.lifecat.phone.activity.PhotoActivity;
-import com.ten.lifecat.phone.activity.UploadActivity;
-import com.ten.lifecat.phone.activity.WebActivity;
+import com.ten.lifecat.phone.bean.Msg;
+import com.ten.lifecat.phone.adapter.MsgAdapter;
+import com.ten.lifecat.phone.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author 59682
- * @name MainActivity
+ * @name UserProfileActivity
  * @description User个人信息 profile界面
  */
-public class MainActivity extends AppCompatActivity {
+public class UserProfileActivity extends AppCompatActivity {
 
     //Msg序列
     private List<Msg> msgList = new ArrayList<>();
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         /* 设置toolbar */
-        Toolbar toolbar = findViewById(com.ten.lifecat.phone.R.id.talking_toolbar);
+        Toolbar toolbar = findViewById(R.id.talking_toolbar);
         setSupportActionBar(toolbar);
 
         //-------------------------Talking类代码
@@ -92,21 +92,21 @@ public class MainActivity extends AppCompatActivity {
                         // 创建Intent对象
                         Intent intent = new Intent();
                         // 设置要跳转的页面
-                        intent.setClass(MainActivity.this, UploadActivity.class);
+                        intent.setClass(UserProfileActivity.this, UploadActivity.class);
                         // 开始Activity
                         startActivity(intent);
                     } else if (content.contains("相册") || content.contains("photo")) {
                         // 创建Intent对象
                         Intent intent = new Intent();
                         // 设置要跳转的页面
-                        intent.setClass(MainActivity.this, PhotoActivity.class);
+                        intent.setClass(UserProfileActivity.this, PhotoActivity.class);
                         // 开始Activity
                         startActivity(intent);
                     } else if (content.contains("网页") || content.contains("web")) {
                         // 创建Intent对象
                         Intent intent = new Intent();
                         // 设置要跳转的页面
-                        intent.setClass(MainActivity.this, WebActivity.class);
+                        intent.setClass(UserProfileActivity.this, WebActivity.class);
                         // 开始Activity
                         startActivity(intent);
                     }

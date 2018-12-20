@@ -17,9 +17,7 @@ import com.ten.lifecat.phone.R;
 import java.util.List;
 
 /**
- * @author 59682
- * @name PhotoAdapter
- * @description adapter-recyclerview
+ * 图片卡片适配器 adapter for recyclerView
  */
 public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> {
 
@@ -28,9 +26,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
     private List<Photo> mPhotoList;
 
     /**
-     * @author 59682
-     * @name ViewHolder
-     * @description 嵌套缓存类，直接从Holder中取item 无需findid重新加载
+     * 嵌套缓存类，直接从Holder中取item 无需findid重新加载
      */
     static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -52,7 +48,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
     }
 
     /**
-     * @description 生成Holder实例
+     * 生成Holder实例
      */
     @NonNull
     @Override
@@ -65,7 +61,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
     }
 
     /**
-     * @description 滚动到屏幕内时执行
+     * 滚动到屏幕内时执行
      */
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
@@ -78,7 +74,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
     }
 
     /**
-     * @description 返回item总的项数
+     * 返回item总的项数
      */
     @Override
     public int getItemCount() {
