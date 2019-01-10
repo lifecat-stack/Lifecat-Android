@@ -8,7 +8,8 @@ import kotlin.reflect.KProperty
 
 class Preference<T>(val context: Context,
                     val name: String,
-                    val default: T) : ReadWriteProperty<Any?, T> {
+                    val default: T)
+    : ReadWriteProperty<Any?, T> {
 
     /** 通过属性代理初始化共享参数对象 */
     val prefs: SharedPreferences by lazy { context.getSharedPreferences("default", Context.MODE_PRIVATE) }
@@ -38,7 +39,7 @@ class Preference<T>(val context: Context,
 
     // put 属性代理
     private fun <T> putPreference(name: String, value: T) = with(prefs.edit()) {
-        val res: Any = when (value) {
+        when (value) {
             is Long -> putLong(name, value)
             is String -> putString(name, value)
             is Int -> putInt(name, value)

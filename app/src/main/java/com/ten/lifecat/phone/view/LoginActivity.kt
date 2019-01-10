@@ -14,6 +14,7 @@ import android.widget.Toast
 
 import com.ten.lifecat.phone.R
 import com.ten.lifecat.phone.model.bean.User
+import com.ten.lifecat.phone.presenter.AccountPresenter
 
 /**
  * 用户登录注册界面
@@ -48,6 +49,12 @@ class LoginActivity : AppCompatActivity() {
         private val REQUEST_SIGNUP = 0
     }
 
+
+    private val account = AccountPresenter(this)
+    private var userName: String? = null
+    private var userPassword: String? = null
+    private var hasLogin: Boolean? = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -68,12 +75,10 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-        val pref = getSharedPreferences("data", MODE_PRIVATE)!!
-        val userName = pref.getString("user_email", "")
-        val userPassword = pref.getString("user_password", "")
-
-        userName?.let { emailText!!.setText(userName) }
-        userPassword?.let {passwordText!!.setText(userPassword)  }
+        userName = account.userEmail
+        userPassword = account.userPassword
+        userName.let { emailText!!.setText(userName) }
+        userPassword.let { passwordText!!.setText(userPassword) }
     }
 
     /**
@@ -164,7 +169,7 @@ class LoginActivity : AppCompatActivity() {
                 // By default we just finish the Activity and log them in automatically
                 /*------ 登录成功 ------*/
                 val intent = Intent()
-                intent.setClass(this@LoginActivity, BackgroundActivity::class.java)
+                intent.setClass(this@LoginActivity, LoginActivity::class.java)
                 startActivity(intent)
 
                 this.finish()
@@ -178,14 +183,15 @@ class LoginActivity : AppCompatActivity() {
     fun onLoginSuccess() {
         loginButton!!.isEnabled = true
 
-        // 邮箱密码存储到本地数据库，设置登录标记为true
-        val editor = getSharedPreferences("data", MODE_PRIVATE)!!.edit()
-        editor.putString("user_email", emailText!!.text.toString())
-        editor.putString("user_password", passwordText!!.text.toString())
-        editor.putBoolean("hasLogin", true)
-        editor.apply()
 
-        startActivity(Intent(this@LoginActivity, BackgroundActivity::class.java))
+        // 邮箱密码存储到本地数据库，设置登录标记为true
+        account.userEmail = emailText!!.text.toString()
+        account.userPassword = passwordText!!.text.toString()
+        account.hasLogin = true
+
+        Toast.makeText(baseContext, "数据存储" + account.userEmail + "," + account.userPassword, Toast.LENGTH_LONG).show()
+
+        startActivity(Intent(this@LoginActivity, LoginActivity::class.java))
         finish()
     }
 
