@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone.view.fragment.adapter
+package com.ten.lifecat.phone.view.adapter
 
 import android.content.Context
 import android.support.v7.widget.CardView

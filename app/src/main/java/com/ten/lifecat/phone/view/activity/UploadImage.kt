@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone.view
+package com.ten.lifecat.phone.view.activity
 
 
 import android.app.Activity

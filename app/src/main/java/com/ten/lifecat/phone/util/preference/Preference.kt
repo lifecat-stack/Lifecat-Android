@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone.util
+package com.ten.lifecat.phone.util.preference
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -6,6 +6,9 @@ import java.lang.IllegalArgumentException
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
+/**
+ * SharePreference数据库委托访问控制对象
+ */
 class Preference<T>(val context: Context,
                     val name: String,
                     val default: T)

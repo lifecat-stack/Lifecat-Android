@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone.util.data.http
+package com.ten.lifecat.phone.util.http
 
 import java.io.BufferedReader
 import java.io.InputStreamReader

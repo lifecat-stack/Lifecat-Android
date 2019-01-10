@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone.view
+package com.ten.lifecat.phone.view.activity
 
 import android.app.Activity
 import android.app.ProgressDialog
@@ -51,9 +51,6 @@ class LoginActivity : AppCompatActivity() {
 
 
     private val account = AccountPresenter(this)
-    private var userName: String? = null
-    private var userPassword: String? = null
-    private var hasLogin: Boolean? = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,10 +72,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-        userName = account.userEmail
-        userPassword = account.userPassword
-        userName.let { emailText!!.setText(userName) }
-        userPassword.let { passwordText!!.setText(userPassword) }
+        account.userEmail.let { emailText!!.setText(account.userEmail) }
+        account.userPassword.let { passwordText!!.setText(account.userPassword) }
     }
 
     /**
@@ -169,7 +164,7 @@ class LoginActivity : AppCompatActivity() {
                 // By default we just finish the Activity and log them in automatically
                 /*------ 登录成功 ------*/
                 val intent = Intent()
-                intent.setClass(this@LoginActivity, LoginActivity::class.java)
+                intent.setClass(this@LoginActivity, BackgroundActivity::class.java)
                 startActivity(intent)
 
                 this.finish()
@@ -191,7 +186,7 @@ class LoginActivity : AppCompatActivity() {
 
         Toast.makeText(baseContext, "数据存储" + account.userEmail + "," + account.userPassword, Toast.LENGTH_LONG).show()
 
-        startActivity(Intent(this@LoginActivity, LoginActivity::class.java))
+        startActivity(Intent(this@LoginActivity, BackgroundActivity::class.java))
         finish()
     }
 

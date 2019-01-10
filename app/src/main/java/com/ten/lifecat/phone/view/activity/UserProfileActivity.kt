@@ -1,20 +1,18 @@
-package com.ten.lifecat.phone.view
+package com.ten.lifecat.phone.view.activity
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-
-import com.ten.lifecat.phone.model.bean.Msg
-import com.ten.lifecat.phone.view.fragment.adapter.MsgAdapter
 import com.ten.lifecat.phone.R
-
-import java.util.ArrayList
+import com.ten.lifecat.phone.model.bean.Msg
+import com.ten.lifecat.phone.view.adapter.MsgAdapter
+import java.util.*
 
 /**
  * @author 59682

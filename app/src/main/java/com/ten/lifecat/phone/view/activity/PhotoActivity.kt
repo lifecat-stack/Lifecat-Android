@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone.view
+package com.ten.lifecat.phone.view.activity
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -10,7 +10,7 @@ import android.view.Menu
 import android.view.MenuItem
 
 import com.ten.lifecat.phone.model.bean.Photo
-import com.ten.lifecat.phone.view.fragment.adapter.PhotoAdapter
+import com.ten.lifecat.phone.view.adapter.PhotoAdapter
 import com.ten.lifecat.phone.R
 
 import java.util.ArrayList
