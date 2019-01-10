@@ -1,7 +1,6 @@
-package com.ten.lifecat.phone.activity
+package com.ten.lifecat.phone.view
 
 import android.content.Intent
-import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -11,8 +10,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 
-import com.ten.lifecat.phone.bean.Msg
-import com.ten.lifecat.phone.adapter.MsgAdapter
+import com.ten.lifecat.phone.model.bean.Msg
+import com.ten.lifecat.phone.view.fragment.adapter.MsgAdapter
 import com.ten.lifecat.phone.R
 
 import java.util.ArrayList
@@ -73,7 +72,7 @@ class UserProfileActivity : AppCompatActivity() {
                 //msgRecyclerView.scrollToPosition(msgList.size()-2);
 
                 //回应
-                val msgl = Msg(Msg.TYPE_RECEIVED)
+                val msgl = Msg("", Msg.TYPE_RECEIVED)
                 msgList.add(msgl)
                 adapter!!.notifyItemInserted(msgList.size - 1)
 

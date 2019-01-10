@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone.util.data
+package com.ten.lifecat.phone.util
 
 import android.content.Context
 import android.content.SharedPreferences

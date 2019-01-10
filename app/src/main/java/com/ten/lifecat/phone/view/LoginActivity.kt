@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone.activity
+package com.ten.lifecat.phone.view
 
 import android.app.Activity
 import android.app.ProgressDialog
@@ -13,7 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 
 import com.ten.lifecat.phone.R
-import com.ten.lifecat.phone.bean.User
+import com.ten.lifecat.phone.model.bean.User
 
 /**
  * 用户登录注册界面
@@ -37,43 +37,73 @@ class LoginActivity : AppCompatActivity() {
      * 跳转到注册界面
      */
     private var signupLink: TextView? = null
+    /**
+     * 使用体验账户登录
+     */
+    private var experience: TextView? = null
+
+    companion object {
+        /* 广播信息 */
+        private val TAG = "LoginActivity"
+        private val REQUEST_SIGNUP = 0
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_login)
 
-        assignViews()
-        initListener()
-    }
-
-    /**
-     * @description 获取组件
-     */
-    private fun assignViews() {
-        emailText = findViewById(R.id.input_email)
+        emailText = findViewById(R.id.input_email)!!
         passwordText = findViewById(R.id.input_password)
         loginButton = findViewById(R.id.btn_login)
         signupLink = findViewById(R.id.link_signup)
-    }
+        experience = findViewById(R.id.experience)
 
-    /**
-     * @description button点击事件
-     */
-    private fun initListener() {
-        /* 登录button */
-        loginButton!!.setOnClickListener { v -> login() }
-        /* 注册button */
-        signupLink!!.setOnClickListener { v ->
-            // Start the Signup activity
-            val intent = Intent(applicationContext, SignupActivity::class.java)
-            startActivityForResult(intent, REQUEST_SIGNUP)
+        loginButton!!.setOnClickListener {
+            login()
+        }
+        signupLink!!.setOnClickListener {
+            startActivityForResult(Intent(applicationContext, SignupActivity::class.java), REQUEST_SIGNUP)
             finish()
         }
+
+
+        val pref = getSharedPreferences("data", MODE_PRIVATE)!!
+        val userName = pref.getString("user_email", "")
+        val userPassword = pref.getString("user_password", "")
+
+        userName?.let { emailText!!.setText(userName) }
+        userPassword?.let {passwordText!!.setText(userPassword)  }
     }
 
     /**
-     * @description 登录button事件
+     * 登录表单格式验证
+     */
+    private fun validate(): Boolean {
+        val email = emailText!!.text.toString()
+        val password = passwordText!!.text.toString()
+
+        // email=null 或 email不符合格式
+        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            emailText!!.error = "enter a valid email address"
+            return false
+        } else {
+            emailText!!.error = null
+        }
+
+        // password==null 或 password小于4字符 或 password大于10字符
+        if (password.isEmpty() || password.length < 4 || password.length > 10) {
+            passwordText!!.error = "between 4 and 10 alphanumeric characters"
+            return false
+        } else {
+            passwordText!!.error = null
+        }
+
+        return true
+    }
+
+    /**
+     * 登录button事件
      */
     fun login() {
         Log.d(TAG, "Login")
@@ -124,7 +154,7 @@ class LoginActivity : AppCompatActivity() {
     /*---------- Activity方法 ----------*/
 
     /**
-     * @description 登录成功-->UserProfileActivity
+     * 登录成功-->UserProfileActivity
      */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_SIGNUP) {
@@ -143,15 +173,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     /**
-     * @description 返回键
-     */
-    override fun onBackPressed() {
-        // Disable going back to the WelcomeActivity
-        moveTaskToBack(true)
-    }
-
-    /**
-     * @description 登录成功-->跳转 + finish Activity
+     *  登录成功
      */
     fun onLoginSuccess() {
         loginButton!!.isEnabled = true
@@ -163,54 +185,25 @@ class LoginActivity : AppCompatActivity() {
         editor.putBoolean("hasLogin", true)
         editor.apply()
 
-        /* 跳转到BackgroundActivity */
-        val intent = Intent()
-        intent.setClass(this@LoginActivity, BackgroundActivity::class.java)
-        startActivity(intent)
-
-        /* 关闭LoginActivity */
+        startActivity(Intent(this@LoginActivity, BackgroundActivity::class.java))
         finish()
     }
 
     /**
-     * @description 登录失败-->广播
+     * 登录失败
      */
     fun onLoginFailed() {
         Toast.makeText(baseContext, "Login failed", Toast.LENGTH_LONG).show()
         loginButton!!.isEnabled = true
     }
 
+
     /**
-     * @return 表单合格-->true  表单不合格-->false
-     * @description 表单验证
+     * 返回键
      */
-    fun validate(): Boolean {
-        var valid = true
-
-        val email = emailText!!.text.toString()
-        val password = passwordText!!.text.toString()
-        /* email=null 或 email不符合格式 */
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            emailText!!.error = "enter a valid email address"
-            valid = false
-        } else {
-            emailText!!.error = null
-        }
-        /* password==null 或 password小于4字符 或 password大于10字符 */
-        if (password.isEmpty() || password.length < 4 || password.length > 10) {
-            passwordText!!.error = "between 4 and 10 alphanumeric characters"
-            valid = false
-        } else {
-            passwordText!!.error = null
-        }
-
-        return valid
+    override fun onBackPressed() {
+        // Disable going back to the WelcomeActivity
+        moveTaskToBack(true)
     }
 
-    companion object {
-
-        /* 广播信息 */
-        private val TAG = "LoginActivity"
-        private val REQUEST_SIGNUP = 0
-    }
 }

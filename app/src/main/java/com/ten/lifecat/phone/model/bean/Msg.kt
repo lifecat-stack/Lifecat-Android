@@ -1,15 +1,12 @@
-package com.ten.lifecat.phone.bean
+package com.ten.lifecat.phone.model.bean
 
 /**
  * Created by 59682 on 2017/10/7.
  */
 
-class Msg {
+data class Msg(var content: String, var type: Int) {
 
-    var content: String? = null
-        private set
-    var type: Int = 0
-        private set
+
     private var myTalking: String? = null
 
     private val talking: String?
@@ -21,16 +18,6 @@ class Msg {
 
             return myTalking
         }
-
-    constructor(content: String, type: Int) {
-        this.content = content
-        this.type = type
-    }
-
-    constructor(type: Int) {
-        this.content = talking
-        this.type = type
-    }
 
     companion object {
         val TYPE_RECEIVED = 0

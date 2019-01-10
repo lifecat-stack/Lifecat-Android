@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone.view
+package com.ten.lifecat.phone.view.fragment
 
 import android.net.Uri
 import android.os.Bundle
@@ -19,7 +19,7 @@ class GuildFragment : Fragment() {
     private var customVideoView: CustomVideoView? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        customVideoView = CustomVideoView(context)
+        customVideoView = context?.let { CustomVideoView(it) }
         /**获取参数，根据不同的参数播放不同的视频 */
         val index = arguments!!.getInt("index")
         val uri: Uri

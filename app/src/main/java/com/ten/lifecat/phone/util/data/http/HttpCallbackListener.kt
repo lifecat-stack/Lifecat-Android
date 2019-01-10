@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone.http
+package com.ten.lifecat.phone.util.data.http
 
 /**
  * @description 子线程的回调接口

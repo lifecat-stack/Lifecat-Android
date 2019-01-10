@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone.adapter
+package com.ten.lifecat.phone.view.fragment.adapter
 
 import android.content.Context
 import android.support.v7.widget.CardView
@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 
 import com.bumptech.glide.Glide
-import com.ten.lifecat.phone.bean.Photo
+import com.ten.lifecat.phone.model.bean.Photo
 import com.ten.lifecat.phone.R
 
 /**
@@ -23,7 +23,7 @@ class PhotoAdapter(private val mPhotoList: List<Photo>) : RecyclerView.Adapter<P
     /**
      * 嵌套缓存类，直接从Holder中取item 无需findid重新加载
      */
-    internal class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         /* view点击事件 */
         var cardView: CardView

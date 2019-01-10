@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone
+package com.ten.lifecat.phone.view.adapter
 
 /**
  * Created by 59682 on 2017/10/7.

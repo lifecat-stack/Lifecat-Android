@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone
+package com.ten.lifecat.phone.util.image
 
 class GetImage//加载图片
 //    public static Bitmap getUrlImage(String url) {

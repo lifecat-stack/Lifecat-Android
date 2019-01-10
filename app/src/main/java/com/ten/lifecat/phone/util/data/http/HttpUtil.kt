@@ -1,18 +1,12 @@
-package com.ten.lifecat.phone.http
+package com.ten.lifecat.phone.util.data.http
 
 import java.io.BufferedReader
-import java.io.IOException
-import java.io.InputStream
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
-import java.net.MalformedURLException
 import java.net.URL
-
-import javax.security.auth.callback.Callback
 
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.Response
 
 
 object HttpUtil {

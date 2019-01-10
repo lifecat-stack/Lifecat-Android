@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone.bean
+package com.ten.lifecat.phone.model.bean
 
 /**
  * @author 59682

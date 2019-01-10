@@ -1,9 +1,9 @@
-package com.ten.lifecat.phone.view
+package com.ten.lifecat.phone.view.fragment
 
 import android.content.Context
-import android.media.MediaPlayer
 import android.net.Uri
 import android.util.AttributeSet
+import android.view.View
 import android.widget.VideoView
 
 /**

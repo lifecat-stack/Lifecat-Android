@@ -1,6 +1,7 @@
-package com.ten.lifecat.phone.activity
+package com.ten.lifecat.phone.view
 
 
+import android.app.Activity
 import android.content.Intent
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity

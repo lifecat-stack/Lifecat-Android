@@ -1,4 +1,4 @@
-package com.ten.lifecat.phone
+package com.ten.lifecat.phone.view.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -6,14 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.ten.lifecat.phone.R
 
 /**
- * Created by 59682 on 2017/10/7.
+ * 自定义MSG适配器
  */
-
 class MsgAdapter(private val mMsgList: List<Msg>) : RecyclerView.Adapter<MsgAdapter.ViewHolder>() {
 
-    internal class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var leftLayout: LinearLayout
         var rightLayout: LinearLayout
         var leftMsg: TextView

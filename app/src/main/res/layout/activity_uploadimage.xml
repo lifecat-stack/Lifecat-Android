@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ten.lifecat.phone.activity.UploadImage">
+    tools:context="com.ten.lifecat.phone.view.UploadImage">
 
 
 </android.support.constraint.ConstraintLayout>
