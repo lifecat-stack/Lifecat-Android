@@ -14,13 +14,8 @@ import android.widget.Toast
 
 import com.ten.lifecat.phone.R
 
-/**
- * @name: SignupActivity
- * @description: 注册界面
- * @author: 59682
- */
 class SignupActivity : AppCompatActivity() {
-    /* 组件ID */
+
     private var _nameText: EditText? = null
     private var _emailText: EditText? = null
     private var _passwordText: EditText? = null
@@ -38,7 +33,7 @@ class SignupActivity : AppCompatActivity() {
     }
 
     /**
-     * @description: 获取组件
+     * 获取组件
      */
     private fun assignViews() {
         _nameText = findViewById(R.id.input_name)
@@ -49,22 +44,20 @@ class SignupActivity : AppCompatActivity() {
     }
 
     /**
-     * @description: button点击事件
+     * button点击事件
      */
     private fun initListener() {
         /* 注册按钮 */
         _signupButton!!.setOnClickListener { signup() }
         /* 登录链接按钮 */
         _loginLink!!.setOnClickListener {
-            // Finish the registration screen and return to the Login activity
-            val intent = Intent(applicationContext, LoginActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(applicationContext, LoginActivity::class.java))
             finish()
         }
     }
 
     /**
-     * @description 注册
+     * 注册
      */
     fun signup() {
         Log.d(TAG, "Signup")

@@ -155,10 +155,10 @@ class WelcomeActivity : AppCompatActivity() {
             iv3!!.setImageResource(R.mipmap.dot_normal)
 
             when (position) {
-                0 -> iv1!!.setImageResource(R.mipmap.dot_focus)
-                1 -> iv2!!.setImageResource(R.mipmap.dot_focus)
+                0 -> iv1?.setImageResource(R.mipmap.dot_focus)
+                1 -> iv2?.setImageResource(R.mipmap.dot_focus)
                 2 -> {
-                    iv3!!.setImageResource(R.mipmap.dot_focus)
+                    iv3?.setImageResource(R.mipmap.dot_focus)
                     btStart!!.visibility = View.VISIBLE
                 }
             }

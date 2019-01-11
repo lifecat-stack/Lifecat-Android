@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageButton
 
 import com.ten.lifecat.phone.R
+import org.jetbrains.anko.startActivity
 
 /**
  * 主背景界面
@@ -46,25 +47,21 @@ class BackgroundActivity : AppCompatActivity() {
 
         // 导航按钮
         val actionBar = supportActionBar
-        if (actionBar != null) {
+        actionBar?.let {
             actionBar.setDisplayHomeAsUpEnabled(true)
             actionBar.setHomeAsUpIndicator(R.mipmap.navigation)
         }
 
         // 默认激活按钮
         navigationView.setCheckedItem(R.id.nav_profile)
-
         navigationView.setNavigationItemSelectedListener { item ->
-            val intent = Intent()
             when (item.itemId) {
-                R.id.nav_profile -> intent.setClass(this@BackgroundActivity, UserProfileActivity::class.java)
-                R.id.nav_web -> intent.setClass(this@BackgroundActivity, WebActivity::class.java)
-                R.id.nav_photo -> intent.setClass(this@BackgroundActivity, PhotoActivity::class.java)
-                R.id.nav_upload -> intent.setClass(this@BackgroundActivity, UploadActivity::class.java)
-                R.id.nav_settings -> intent.setClass(this@BackgroundActivity, SettingsActivity::class.java)
-                else -> println("no!")
+                R.id.nav_profile -> startActivity<UserProfileActivity>()
+                R.id.nav_web -> startActivity<WebActivity>()
+                R.id.nav_photo -> startActivity<PhotoActivity>()
+                R.id.nav_upload -> startActivity<UploadActivity>()
+                R.id.nav_settings -> startActivity<SettingsActivity>()
             }
-            startActivity(intent)
             true
         }
     }
@@ -78,28 +75,9 @@ class BackgroundActivity : AppCompatActivity() {
     }
 
     private fun buttonListener() {
-        uploadIntentButton!!.setOnClickListener { v ->
-            val intent = Intent()
-            intent.setClass(this@BackgroundActivity, UploadActivity::class.java)
-            startActivity(intent)
-        }
-
-        webIntentButton!!.setOnClickListener { v ->
-            val intent = Intent()
-            intent.setClass(this@BackgroundActivity, WebActivity::class.java)
-            startActivity(intent)
-        }
-
-        photoIntentButton!!.setOnClickListener { v ->
-            val intent = Intent()
-            intent.setClass(this@BackgroundActivity, PhotoActivity::class.java)
-            startActivity(intent)
-        }
-
-        userIntentButton!!.setOnClickListener { v ->
-            val intent = Intent()
-            intent.setClass(this@BackgroundActivity, UserProfileActivity::class.java)
-            startActivity(intent)
-        }
+        uploadIntentButton!!.setOnClickListener { startActivity<UploadActivity>() }
+        webIntentButton!!.setOnClickListener { startActivity<WebActivity>() }
+        photoIntentButton!!.setOnClickListener { startActivity<PhotoActivity>() }
+        userIntentButton!!.setOnClickListener { startActivity<UserProfileActivity>() }
     }
 }

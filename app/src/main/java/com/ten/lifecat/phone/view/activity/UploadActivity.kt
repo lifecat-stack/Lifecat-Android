@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.ImageView
 
 import com.ten.lifecat.phone.R
+import org.jetbrains.anko.startActivity
 
 import java.io.FileNotFoundException
 
@@ -38,10 +39,8 @@ class UploadActivity : AppCompatActivity() {
         init()
 
         /* 点击打开UpLoadImage，使用Album进行上传 */
-        Browse!!.setOnClickListener { view ->
-            val intent = Intent()
-            intent.setClass(this@UploadActivity, UploadImage::class.java)
-            startActivity(intent)
+        Browse!!.setOnClickListener {
+            startActivity<UploadImage>()
         }
     }
 
@@ -70,26 +69,18 @@ class UploadActivity : AppCompatActivity() {
      * 设置menu点击事件
      */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
         when (item.itemId) {
-
             /* 返回键 */
             R.id.backup -> {
-                val intentBackup = Intent()
-                intentBackup.setClass(this@UploadActivity, LoginActivity::class.java)
-                startActivity(intentBackup)
+                startActivity<LoginActivity>()
             }
             /* web键 */
             R.id.web -> {
-                val intent_web = Intent()
-                intent_web.setClass(this@UploadActivity, WebActivity::class.java)
-                startActivity(intent_web)
+                startActivity<WebActivity>()
             }
             /* home键 */
             R.id.home -> {
-                val intent_home = Intent()
-                intent_home.setClass(this@UploadActivity, BackgroundActivity::class.java)
-                startActivity(intent_home)
+                startActivity<BackgroundActivity>()
             }
             else -> {
             }

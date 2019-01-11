@@ -13,8 +13,9 @@ import android.widget.TextView
 import android.widget.Toast
 
 import com.ten.lifecat.phone.R
-import com.ten.lifecat.phone.model.bean.User
-import com.ten.lifecat.phone.presenter.AccountPresenter
+import com.ten.lifecat.phone.presenter.AccountRemotePresenter
+import com.ten.lifecat.phone.presenter.AccountLocalPresenter
+import org.jetbrains.anko.startActivity
 
 /**
  * 用户登录注册界面
@@ -50,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
-    private val account = AccountPresenter(this)
+    private val account = AccountLocalPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,6 +68,7 @@ class LoginActivity : AppCompatActivity() {
             login()
         }
         signupLink!!.setOnClickListener {
+            startActivity<SignupActivity>()
             startActivityForResult(Intent(applicationContext, SignupActivity::class.java), REQUEST_SIGNUP)
             finish()
         }
@@ -132,7 +134,7 @@ class LoginActivity : AppCompatActivity() {
         /*------ 验证逻辑 ------*/
 
         /* 认证成功 */
-        if (User.validateUser(email, password)) {
+        if (AccountRemotePresenter.validateUser(email, password)) {
             /* 启动成功线程-->延时三秒动画 */
             android.os.Handler().postDelayed(
                     {
