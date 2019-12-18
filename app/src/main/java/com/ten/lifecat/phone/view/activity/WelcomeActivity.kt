@@ -15,6 +15,7 @@ import android.widget.ImageView
 
 import com.ten.lifecat.phone.view.fragment.GuildFragment
 import com.ten.lifecat.phone.R
+import java.util.*
 
 /**
  * 首次启动欢迎界面
