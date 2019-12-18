@@ -1,11 +1,11 @@
 package com.ten.lifecat.phone.view.activity
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 
@@ -38,10 +38,10 @@ class PhotoActivity : AppCompatActivity() {
         initPhotos()
 
         /* 获取listview布局实例 */
-        val recyclerView = findViewById<RecyclerView>(R.id.photo_recyclerview)
+        val recyclerView = findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.photo_recyclerview)
 
         /* 设置卡片式布局管理器 */
-        val layoutManager = GridLayoutManager(this, 2)
+        val layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 2)
         recyclerView.layoutManager = layoutManager
 
         /* 设置item适配器 */

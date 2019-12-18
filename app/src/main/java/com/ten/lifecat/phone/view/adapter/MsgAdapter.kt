@@ -1,6 +1,6 @@
 package com.ten.lifecat.phone.view.adapter
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +12,9 @@ import java.util.ArrayList
 /**
  * 自定义MSG适配器
  */
-class MsgAdapter(private val mMsgList: ArrayList<com.ten.lifecat.phone.model.bean.Msg>) : RecyclerView.Adapter<MsgAdapter.ViewHolder>() {
+class MsgAdapter(private val mMsgList: ArrayList<com.ten.lifecat.phone.model.bean.Msg>) : androidx.recyclerview.widget.RecyclerView.Adapter<MsgAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         var leftLayout: LinearLayout
         var rightLayout: LinearLayout
         var leftMsg: TextView

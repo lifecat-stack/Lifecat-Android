@@ -2,7 +2,7 @@ package com.ten.lifecat.phone.view.fragment
 
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +14,7 @@ import com.ten.lifecat.phone.R
  * @name GuildFragment
  * @description 管理VIEW的适配器
  */
-class GuildFragment : Fragment() {
+class GuildFragment : androidx.fragment.app.Fragment() {
 
     private var customVideoView: CustomVideoView? = null
 

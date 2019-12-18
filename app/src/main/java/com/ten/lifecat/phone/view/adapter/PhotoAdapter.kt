@@ -1,8 +1,8 @@
 package com.ten.lifecat.phone.view.adapter
 
 import android.content.Context
-import android.support.v7.widget.CardView
-import android.support.v7.widget.RecyclerView
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,22 +16,22 @@ import com.ten.lifecat.phone.R
 /**
  * 图片卡片适配器 adapter for recyclerView
  */
-class PhotoAdapter(private val mPhotoList: List<Photo>) : RecyclerView.Adapter<PhotoAdapter.ViewHolder>() {
+class PhotoAdapter(private val mPhotoList: List<Photo>) : androidx.recyclerview.widget.RecyclerView.Adapter<PhotoAdapter.ViewHolder>() {
 
     private var mContext: Context? = null
 
     /**
      * 嵌套缓存类，直接从Holder中取item 无需findid重新加载
      */
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
         /* view点击事件 */
-        var cardView: CardView
+        var cardView: androidx.cardview.widget.CardView
         var photoImage: ImageView
         var photoName: TextView
 
         init {
-            cardView = itemView as CardView
+            cardView = itemView as androidx.cardview.widget.CardView
             photoImage = itemView.findViewById(R.id.photo_image)
             photoName = itemView.findViewById(R.id.photo_name)
         }

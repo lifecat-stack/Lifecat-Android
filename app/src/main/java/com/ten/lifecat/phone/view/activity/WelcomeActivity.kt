@@ -1,11 +1,11 @@
 package com.ten.lifecat.phone.view.activity
 
 import android.content.Intent
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.ViewPager
-import android.support.v7.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.Window
@@ -25,7 +25,7 @@ class WelcomeActivity : AppCompatActivity() {
     /**
      * 翻页视图容器
      */
-    private var vp: ViewPager? = null
+    private var vp: androidx.viewpager.widget.ViewPager? = null
     /**
      * 欢迎动画 第一屏
      */
@@ -46,7 +46,7 @@ class WelcomeActivity : AppCompatActivity() {
     /**
      * 欢迎动画集合
      */
-    private var fragments: MutableList<Fragment>? = null
+    private var fragments: MutableList<androidx.fragment.app.Fragment>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -123,9 +123,9 @@ class WelcomeActivity : AppCompatActivity() {
     }
 
     /** ViewPage adapte */
-    private inner class MyPageAdapter internal constructor(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+    private inner class MyPageAdapter internal constructor(fm: androidx.fragment.app.FragmentManager) : androidx.fragment.app.FragmentPagerAdapter(fm) {
 
-        override fun getItem(position: Int): Fragment {
+        override fun getItem(position: Int): androidx.fragment.app.Fragment {
             return fragments!![position]
         }
 
@@ -137,7 +137,7 @@ class WelcomeActivity : AppCompatActivity() {
     /**
      * ViewPager滑动页面监听器
      */
-    private inner class MyPageChangeListener : ViewPager.OnPageChangeListener {
+    private inner class MyPageChangeListener : androidx.viewpager.widget.ViewPager.OnPageChangeListener {
 
         /**
          * @param position 当前位置

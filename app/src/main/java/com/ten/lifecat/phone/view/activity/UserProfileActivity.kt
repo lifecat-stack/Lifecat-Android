@@ -2,10 +2,10 @@ package com.ten.lifecat.phone.view.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.Toolbar
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -28,7 +28,7 @@ class UserProfileActivity : AppCompatActivity() {
     //发送按钮
     private var send: Button? = null
     //获取RecyclerView实例
-    private var msgRecyclerView: RecyclerView? = null
+    private var msgRecyclerView: androidx.recyclerview.widget.RecyclerView? = null
     //获取适配器实例
     private var adapter: MsgAdapter? = null
 
@@ -50,9 +50,9 @@ class UserProfileActivity : AppCompatActivity() {
         //取得实例
         inputText = findViewById<View>(R.id.input_text) as EditText
         send = findViewById<View>(R.id.send) as Button
-        msgRecyclerView = findViewById<View>(R.id.msg_recycler_view) as RecyclerView
+        msgRecyclerView = findViewById<View>(R.id.msg_recycler_view) as androidx.recyclerview.widget.RecyclerView
         //定义管理器
-        val layoutManager = LinearLayoutManager(this)
+        val layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         //向ReceyclerView添加管理器
         msgRecyclerView!!.layoutManager = layoutManager
         //获得适配器
