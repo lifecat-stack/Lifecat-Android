@@ -12,6 +12,7 @@ import android.widget.VideoView
  * @description 播放视频的VIEW
  */
 class CustomVideoView : VideoView {
+
     constructor(context: Context) : super(context) {}
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}

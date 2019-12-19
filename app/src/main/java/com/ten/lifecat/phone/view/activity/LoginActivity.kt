@@ -4,21 +4,19 @@ import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-
+import androidx.appcompat.app.AppCompatActivity
 import com.ten.lifecat.phone.R
-import com.ten.lifecat.phone.presenter.AccountRemotePresenter
 import com.ten.lifecat.phone.presenter.AccountLocalPresenter
-import org.jetbrains.anko.startActivity
+import com.ten.lifecat.phone.presenter.AccountRemotePresenter
 
 /**
- * 用户登录注册界面
+ * User login view
  */
 class LoginActivity : AppCompatActivity() {
 
@@ -68,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
             login()
         }
         signupLink!!.setOnClickListener {
-            startActivity<SignupActivity>()
+            startActivity(Intent(this, SignupActivity::class.java))
             startActivityForResult(Intent(applicationContext, SignupActivity::class.java), REQUEST_SIGNUP)
             finish()
         }
@@ -159,6 +157,7 @@ class LoginActivity : AppCompatActivity() {
      * 登录成功-->UserProfileActivity
      */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_SIGNUP) {
             if (resultCode == Activity.RESULT_OK) {
 

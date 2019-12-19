@@ -3,17 +3,14 @@ package com.ten.lifecat.phone.view.activity
 import android.app.Activity
 import android.content.Intent
 import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
-
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.ten.lifecat.phone.R
-import org.jetbrains.anko.startActivity
-
 import java.io.FileNotFoundException
 
 /**
@@ -40,7 +37,7 @@ class UploadActivity : AppCompatActivity() {
 
         /* 点击打开UpLoadImage，使用Album进行上传 */
         Browse!!.setOnClickListener {
-            startActivity<UploadImage>()
+            startActivity(Intent(this, UploadImage::class.java))
         }
     }
 
@@ -72,15 +69,15 @@ class UploadActivity : AppCompatActivity() {
         when (item.itemId) {
             /* 返回键 */
             R.id.backup -> {
-                startActivity<LoginActivity>()
+                startActivity(Intent(this, LoginActivity::class.java))
             }
             /* web键 */
             R.id.web -> {
-                startActivity<WebActivity>()
+                startActivity(Intent(this, WebActivity::class.java))
             }
             /* home键 */
             R.id.home -> {
-                startActivity<BackgroundActivity>()
+                startActivity(Intent(this, BackgroundActivity::class.java))
             }
             else -> {
             }

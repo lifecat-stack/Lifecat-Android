@@ -28,7 +28,7 @@ class UserProfileActivity : AppCompatActivity() {
     //发送按钮
     private var send: Button? = null
     //获取RecyclerView实例
-    private var msgRecyclerView: androidx.recyclerview.widget.RecyclerView? = null
+    private var msgRecyclerView: RecyclerView? = null
     //获取适配器实例
     private var adapter: MsgAdapter? = null
 
@@ -50,7 +50,7 @@ class UserProfileActivity : AppCompatActivity() {
         //取得实例
         inputText = findViewById<View>(R.id.input_text) as EditText
         send = findViewById<View>(R.id.send) as Button
-        msgRecyclerView = findViewById<View>(R.id.msg_recycler_view) as androidx.recyclerview.widget.RecyclerView
+        msgRecyclerView = findViewById<View>(R.id.msg_recycler_view) as RecyclerView
         //定义管理器
         val layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         //向ReceyclerView添加管理器

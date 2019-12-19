@@ -68,7 +68,6 @@ dependencies {
     // OkHttp
     implementation 'com.squareup.okhttp3:okhttp:4.2.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "org.jetbrains.anko:anko-common:$anko_version"
 
     // test
     testImplementation 'junit:junit:4.12'
@@ -77,6 +76,9 @@ dependencies {
 }
 
 repositories {
+    maven {
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
     // from maven
     mavenCentral()
 }

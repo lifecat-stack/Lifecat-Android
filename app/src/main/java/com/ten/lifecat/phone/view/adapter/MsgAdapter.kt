@@ -12,21 +12,13 @@ import java.util.ArrayList
 /**
  * 自定义MSG适配器
  */
-class MsgAdapter(private val mMsgList: ArrayList<com.ten.lifecat.phone.model.bean.Msg>) : androidx.recyclerview.widget.RecyclerView.Adapter<MsgAdapter.ViewHolder>() {
+class MsgAdapter(private val mMsgList: ArrayList<com.ten.lifecat.phone.model.bean.Msg>) : RecyclerView.Adapter<MsgAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
-        var leftLayout: LinearLayout
-        var rightLayout: LinearLayout
-        var leftMsg: TextView
-        var rightMsg: TextView
-
-        init {
-            leftLayout = view.findViewById<View>(R.id.left_layout) as LinearLayout
-            rightLayout = view.findViewById<View>(R.id.right_layout) as LinearLayout
-            leftMsg = view.findViewById<View>(R.id.left_msg) as TextView
-            rightMsg = view.findViewById<View>(R.id.right_msg) as TextView
-        }
-
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var leftLayout: LinearLayout = view.findViewById<View>(R.id.left_layout) as LinearLayout
+        var rightLayout: LinearLayout = view.findViewById<View>(R.id.right_layout) as LinearLayout
+        var leftMsg: TextView = view.findViewById<View>(R.id.left_msg) as TextView
+        var rightMsg: TextView = view.findViewById<View>(R.id.right_msg) as TextView
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
