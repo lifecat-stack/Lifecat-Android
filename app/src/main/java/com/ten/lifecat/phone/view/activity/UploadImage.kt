@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.CallSuper
 
 import com.ten.lifecat.phone.R
 import com.yanzhenjie.album.Album
